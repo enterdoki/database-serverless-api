@@ -5,7 +5,7 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "route":"borough/{borough}",
+      "route":"airbnb/{borough}",
       "methods": [
         "get",
         "post"
