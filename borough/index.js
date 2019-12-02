@@ -44,4 +44,5 @@ module.exports = async function (context, req) {
             body: "Please pass a name on the query string or in the request body"
         };
     }
+    aljfl;ajdklfjaldjfklajd;af
 };
