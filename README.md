@@ -5,7 +5,7 @@ Microsoft Azure Functions (Node.Js)
 
 
 ###
-** HOW TO RUN LOCALLY: **
+**HOW TO RUN LOCALLY:**
 
 * Clone this repository
 * If you don't have Node.JS installed, install Node.JS. Else, in this directory, execute npm install
