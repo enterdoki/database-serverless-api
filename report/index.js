@@ -1,40 +1,32 @@
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
-    const Report = require('./database/models/report');
+    const db = require('./database');
+    
     try {
         if(req.method == 'GET') {
-            const data = await Report.findAll();
+            const data = await db.query(`SELECT * FROM reports`);
             if(data) {
                 context.res = {
-                    body: data
+                    body: data[0]
                 }
                 context.done();
             }
         } 
         else if(req.method == 'POST') {
             if(req.body.description) {
-                const data = await Report.create({
-                    severity: req.body.severity,
-                    description: req.body.description,
-                    latitude: req.body.latitude,
-                    longitude: req.body.longitude,
-                    date: Date.now()
-                })
+                await db.query(`INSERT INTO reports VALUES (DEFAULT, "${req.body.severity}", "${req.body.description}", ${req.body.latitude}, ${req.body.longitude}, DEFAULT)`)
+
                 context.res = {
                     status:201,
-                    body: {'The following user report has been added: ': data}
+                    body: 'The following user report has been added.'
                 }
                 context.done();
             } else {
-                const data = await Report.create({
-                    severity: req.body.severity,
-                    latitude: req.body.latitude,
-                    longitude: req.body.longitude,
-                    date: Date.now()
-                })
+                await db.query(`INSERT INTO reports VALUES (DEFAULT, "${req.body.severity}", ${req.body.latitude}, ${req.body.longitude}, DEFAULT)`)
+
                 context.res = {
                     status:201,
-                    body: {'The following user report has been added: ': data}
+                    body: 'The following user report has been added.'
                 }
                 context.done();
             } 

@@ -1,15 +1,13 @@
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
-    const Services = require('./database/models/services');
+
+    const db = require('./database');
+    
     try {
-        const data = await Services.findAll({
-            where: {
-                borough: req.params.borough
-            }
-        });
+        const data = await db.query(`SELECT * FROM services WHERE borough = "${req.params.borough}"`);
         if(data) {
             context.res = {
-                body: data
+                body: data[0]
             }
             context.done();
         }

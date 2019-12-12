@@ -1,6 +1,7 @@
+const Sequelize = require('sequelize')
 const tunnel = require('tunnel-ssh');
-const sequelize = require('sequelize');
-const db = new sequelize(process.env.DATABASE_URL)
+
+const db = new Sequelize(process.env.DATABASE_URL)
 
 // tunnel config 
 var config = {
@@ -9,8 +10,8 @@ var config = {
     host: process.env.SSH_HOST,
     port: 22,
     dstPort: 3306,
-    keepAlive: true,
-    ssl: true
+    keepAlive:true,
+    ssl:true 
 };
 
 tunnel(config, function (error, server) {
@@ -24,8 +25,9 @@ tunnel(config, function (error, server) {
         }).catch(function (err) {
             console.error('Unable establish connection', err);
         })
-
+        
     }
 })
 
 module.exports = db;
+
