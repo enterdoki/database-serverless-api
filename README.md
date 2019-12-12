@@ -15,7 +15,7 @@
 ####
 @GET Function to get all airbnb data by borough:
 
-https://data-visual-api.azurewebsites.net/api/airbnb/{borough_name}
+**https://data-visual-api.azurewebsites.net/api/airbnb/{borough_name}**
 
 
 
@@ -23,7 +23,7 @@ https://data-visual-api.azurewebsites.net/api/airbnb/{borough_name}
 ####
 @GET Endpoint to get all 311 service call data by borough
 
-https://data-visual-api.azurewebsites.net/api/service/{borough_name}
+**https://data-visual-api.azurewebsites.net/api/service/{borough_name}**
 
 
 
@@ -31,7 +31,7 @@ https://data-visual-api.azurewebsites.net/api/service/{borough_name}
 ####
 @GET Endpoint to fetch all user generated 311 service data
 
-https://data-visual-api.azurewebsites.net/api/report
+**https://data-visual-api.azurewebsites.net/api/report**
 
 
 
@@ -39,7 +39,7 @@ https://data-visual-api.azurewebsites.net/api/report
 ####
 @POST Endpoint to allow users to add to 311 service data
 
-https://data-visual-api.azurewebsites.net/api/report
+**https://data-visual-api.azurewebsites.net/api/report**
 
 This endpoint expects the following example body (description is optional): 
 
@@ -56,4 +56,4 @@ This endpoint expects the following example body (description is optional):
 ####
 @GET Endpoint to fetch count of 311 service data grouped by neighborhood (Used to see which neighborhood has the most 311 service calls)
 
-https://data-visual-api.azurewebsites.net/api/neighborCount
+**https://data-visual-api.azurewebsites.net/api/neighborCount**
