@@ -10,7 +10,7 @@
 * Clone this repository
 * If you don't have Node.JS installed, install Node.JS. Else, in this directory, execute npm install
 * Install Azure Function Core Tools. Link here: https://github.com/Azure/azure-functions-core-tools
-
+* On Windows 10, hit F5 to run. On MAC OS, hit FN-F5 to run
 
 ####
 @GET Function to get all airbnb data by borough:
